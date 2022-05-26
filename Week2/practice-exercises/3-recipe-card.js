@@ -17,14 +17,15 @@ const recipe={
     ingredients:["4 eggs","2 strips of bacon","1 tsp salt/pepper"]
 };
 for(let property in recipe){
-    if(property=='title'){
+    if(property==='title'){
         console.log(`Meal name:${recipe.title}`);
     }
-    if(property=='servings'){
+    if(property==='servings'){
         console.log(`Serves:${recipe.servings}`);
     }
-    if(property=='ingredients'){
-        console.log(`Ingredients:${recipe.ingredients}`);
+    if(property==='ingredients'){
+        console.log(`Ingredients:${recipe.ingredients} `);
+        console.log(recipe.ingredients);
     }
 }
 

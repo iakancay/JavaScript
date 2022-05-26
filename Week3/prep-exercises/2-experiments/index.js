@@ -2,6 +2,13 @@
 
 function runExperiment(sampleSize) {
   const valueCounts = [0, 0, 0, 0, 0, 0];
+  
+  for(let i=0; i<sampleSize; i++){
+    let x=Math.floor(Math.random()*6+1);
+    let numberArray=[1,2,3,4,5,6];
+          valueCounts[numberArray.findIndex(element=>element===x)]++;
+   
+  }
 
   // TODO
   // Write a for loop that iterates `sampleSize` times (sampleSize is a number).
@@ -14,6 +21,9 @@ function runExperiment(sampleSize) {
   //    element for value 2, etc.
 
   const results = [];
+  for(let valueCount of valueCounts){
+    results.push(((valueCount/sampleSize)*100).toFixed(2));
+  }
 
   // TODO
   // Write a for..of loop for the `valueCounts` array created in the previous
@@ -24,12 +34,17 @@ function runExperiment(sampleSize) {
   // 2. Convert the computed percentage to a number string with a precision of
   //    two decimals, e.g. '14.60'.
   // 3. Then push that string onto the `results` array.
-
+  console.log(results);
   return results;
+  
 }
 
 function main() {
   const sampleSizes = [100, 1000, 1000000];
+for(let sampleSize of sampleSizes){
+  runExperiment(sampleSize);
+  
+}
 
   // TODO
   // Write a for..of loop that calls the `runExperiment()` function for each
